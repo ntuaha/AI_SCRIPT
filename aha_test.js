@@ -137,7 +137,7 @@ $(function(){
   for(var d in cookie_names){
     var cookie_name = cookie_names[d];
     $.cookie(cookie_name,getUrlParameter(cookie_name));
-    $("body").append("<div>"+$.cookie(cookie_name[d])+"<div>");
+    $("body").append("<div>"+$.cookie(cookie_names[d])+"<div>");
   }
 
 });
