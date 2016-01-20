@@ -127,7 +127,7 @@ function getUrlParameter(sParam) {
         }
     }
 };
-var cookie_names = ['user','time','link'];
+var cookie_names = ['user','time','link','type','q','a','count'];
 $(function(){
   $("body").append("<div>Before<div>");
   for(var d in cookie_names){
