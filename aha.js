@@ -36,7 +36,7 @@ function collectMsg(msg,align){
     question=encodeURIComponent(msg);
   }else if (align=='left'){
     answer=encodeURIComponent(msg);
-    var basic_href = "https://ntuaha.github.io/AI_SCRIPT/aha.html";
+    var basic_href = "http://www.esunbank.com.tw/event/service/talkiframe/index.html";
     var time = new Date();
     var iframe_href = basic_href + "?q=" + question + "&time=" + time + "&a=" + answer+"&count="+controller.msgCount+"&type="+send_type;
     console.log(iframe_href);
