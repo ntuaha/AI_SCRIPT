@@ -45,7 +45,7 @@ function collectMsg(msg,align){
     resetMsgStatus();
   }
 }
-contorller.addMessage = function(title, msg, align) {
+controller.addMessage = function(title, msg, align) {
         //2016-01 修改為i問答
         if(align=='left'){
            title = '<a href="https://www.esunbank.com.tw/bank/personal" target="_blank">i問答說：<br></a>';
