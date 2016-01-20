@@ -2,7 +2,6 @@ function loadIframe(iframeName, url) {
   var $iframe = $('#' + iframeName);
   if ($iframe.length) {
     $iframe.attr('src', url);
-    show_localcookies();
     return false;
   }
   return true;
