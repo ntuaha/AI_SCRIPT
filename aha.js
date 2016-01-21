@@ -1,3 +1,22 @@
+function doAsk(){        
+    var userInputTmp = document.getElementById('askMsgTmp');
+    var userInput = document.getElementById('askMsg');
+    if(userInputTmp!=null && userInput!=null){ 
+        userInput.value = userInputTmp.value;
+        userInputTmp.value = '';
+        //2016-01 changed, 手機版對話框本來會鎖住的將他解開
+        userInputTmp.focus();            
+        //userInputTmp.blur();
+        //alert(userInput.value);
+        
+        // :::::::::::::::: changed start
+        controller.addMessage(controller.msnUserTitle, userInput.value, 'right');                   
+        // :::::::::::::::: changed end                
+        return true;
+    }        
+}
+
+
 function loadIframe(iframeName, url) {
   var $iframe = $('#' + iframeName);
   if ($iframe.length) {
