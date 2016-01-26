@@ -53,14 +53,14 @@ function filterMsg(msg,align){
 }
 function collectMsg(msg,align){
   if(align=='right'){
-    // question=encodeURIComponent(msg);
-    question = msg;
+    question=encodeURIComponent(msg);
+    //question = msg;
     user_input_cnt += 1;
   }else if (align=='left'){
-    // answer=encodeURIComponent(msg);
-    answer = msg;
+    answer=encodeURIComponent(msg);
+    //answer = msg;
     var basic_href = "http://www.esunbank.com.tw/event/service/talkiframe/index.html";
-    var time = new Date();
+    var time = encodeURIComponent(new Date());
     var iframe_href = basic_href + "?q=" + question + "&time=" + time + "&a=" + answer+"&count="+user_input_cnt+"&type="+send_type;
     console.log(iframe_href);
     loadIframe('ifrm',iframe_href);
