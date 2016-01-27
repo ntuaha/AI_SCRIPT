@@ -383,7 +383,13 @@ function autocompelete(){
             "年費"
 		];
 		$( "#askMsgTmp" ).autocomplete({
-			source: availableTags
+			source: availableTags,
+			open: function(event, ui) {
+  	    var autocomplete = $(".ui-autocomplete");
+  	    var oldTop = autocomplete.offset().top;
+  	    var newTop = oldTop - autocomplete.height() - $("#askMsgTmp").height() - 10;
+  	    autocomplete.css("top", newTop);
+			}
 		});
 	});
 }
