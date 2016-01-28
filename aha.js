@@ -388,7 +388,7 @@ function autocompelete(){
 		    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
           $('#askMsgTmp').val(ui.item.value);
 			    askBtnClick();
-			    $(this).close();
+			    $(this).autocomplete("close");
         }
         return false;
 			},
