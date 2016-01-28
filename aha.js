@@ -384,6 +384,13 @@ function autocompelete(){
 		];
 		$( "#askMsgTmp" ).autocomplete({
 			source: availableTags,
+			focus:function(event,ui){
+		    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+          $('#askMsgTmp').val(ui.item.value);
+			    askBtnClick();
+        }
+        return false;
+			},
 			select: function(event,ui){
 			  $('#askMsgTmp').val(ui.item.value);
 			  askBtnClick();
