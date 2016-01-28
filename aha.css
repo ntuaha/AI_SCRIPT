@@ -4,3 +4,7 @@
 .ui-menu-item{
   font-size:0.7em;
 }
+
+.ui-menu-item strong{
+  color:orange;
+}
