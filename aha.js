@@ -393,9 +393,11 @@ function autocompelete(){
         return false;
 			},
 			select: function(event,ui){
-			  $('#askMsgTmp').val(ui.item.value);
-			  askBtnClick();
-			  return false;
+			  if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+				  $('#askMsgTmp').val(ui.item.value);
+				  askBtnClick();
+				  return false;
+			  }
 			},
 			open: function(event, ui) {
 		  	    var autocomplete = $(".ui-autocomplete");
