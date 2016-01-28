@@ -384,11 +384,16 @@ function autocompelete(){
 		];
 		$( "#askMsgTmp" ).autocomplete({
 			source: availableTags,
+			select: function(event,ui){
+			  $('#askMsgTmp').val(ui.item);
+			  askBtnClick();
+			  return false;
+			},
 			open: function(event, ui) {
-  	    var autocomplete = $(".ui-autocomplete");
-  	    var oldTop = autocomplete.offset().top;
-  	    var newTop = oldTop - autocomplete.height() - $("#askMsgTmp").height() - 10;
-  	    autocomplete.css("top", newTop);
+		  	    var autocomplete = $(".ui-autocomplete");
+		  	    var oldTop = autocomplete.offset().top;
+		  	    var newTop = oldTop - autocomplete.height() - $("#askMsgTmp").height() - 10;
+		  	    autocomplete.css("top", newTop);
 			}
 		});
 	});
