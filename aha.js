@@ -385,7 +385,7 @@ function autocompelete(){
 		$( "#askMsgTmp" ).autocomplete({
 			source: availableTags,
 			select: function(event,ui){
-			  $('#askMsgTmp').val(ui.item);
+			  $('#askMsgTmp').val(ui.item.value);
 			  askBtnClick();
 			  return false;
 			},
