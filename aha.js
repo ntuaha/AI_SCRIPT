@@ -1,3 +1,5 @@
+
+
 function doAsk(){        
     var userInputTmp = document.getElementById('askMsgTmp');
     var userInput = document.getElementById('askMsg');
@@ -34,7 +36,14 @@ function loadCSS(){
 	}).appendTo("head");
 }
 function autocompelete(){
-    $.getScript('https://ntuaha.github.io/AI_SCRIPT/jquery-ui.js',function (data, textStatus, jqxhr) {
+  $.getScript('https://ntuaha.github.io/AI_SCRIPT/jquery-ui.js',function (data, textStatus, jqxhr) {
+    $.ui.autocomplete.prototype._renderItem = function (ul, item) {
+            item.label = item.label.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<strong>$1</strong>");
+            return $("<li></li>")
+                    .data("item.autocomplete", item)
+                    .append("<a>" + item.label + "</a>")
+                    .appendTo(ul);
+    };
 		var availableTags = [
 			"網銀存戶登不進去怎麼辦",
             "網銀帳號暫停使用怎麼辦",
