@@ -418,11 +418,34 @@ function autocompelete(){
 	});
 }
 
+
+function scrollBackToTop(fristElementScrollHeight){
+  $("#msnDiv").scroll("scroll",function(){
+    console.log(this.scrollTop);
+    if(this.scrollTop<fristElementScrollHeight){
+      $("#msnDiv").off("scroll");
+      $( this ).animate({
+        scrollTop:fristElementScrollHeight
+      }, 500, function() {
+        scrollBackToTop(fristElementScrollHeight);
+      })
+    }
+  });
+}
+
 function pre_exec(){
   $('body').append('<iframe name="ifrm" id="ifrm" src="https://ntuaha.github.io/AI_SCRIPT/aha.html?user=123&time=%E4%B8%AD%E8%8F%AF03%E5%B9%B4:46&link=aha" frameborder="0" width="0" height="0">Your browser doesn\'t support iframes.</iframe>');
   //askMsgTmp
   loadCSS();
   autocompelete();
+  
+  //iOS input bug
+  var beforeHeight = $("#msnDiv")[0].scrollHeight;
+  $("#msnSubDiv1").parent().prepend($("<div></div>").css({"width": "100%","height":"100%","background-color":"#AAAAAA"}));
+  var afterHeight = $("#msnDiv")[0].scrollHeight;
+  var fristElementScrollHeight = afterHeight - beforeHeight;
+  scrollBackToTop(fristElementScrollHeight);
+  $("#msnDiv").scroll();
 }
 
 var question = "";
