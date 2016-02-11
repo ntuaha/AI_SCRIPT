@@ -441,7 +441,7 @@ function pre_exec(){
   
   //iOS input bug
   var beforeHeight = $("#msnDiv")[0].scrollHeight;
-  $("#msnSubDiv1").parent().prepend($("<div></div>").css({"width": "100%","height":"100%","background-color":"#AAAAAA"}));
+  $("#msnSubDiv1").parent().prepend($("<div></div>").css({"width": "100%","height":"100%","background-color":"#FFFFFF"}));
   var afterHeight = $("#msnDiv")[0].scrollHeight;
   var fristElementScrollHeight = afterHeight - beforeHeight;
   scrollBackToTop(fristElementScrollHeight);
