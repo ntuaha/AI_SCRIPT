@@ -460,7 +460,7 @@ function pre_exec(){
   scrollBackToTop(fristElementScrollHeight);
   $("#msnDiv").scroll();
   
-  if (getUrlVars().a === undefined){ window.location = "https://www.esunbank.com.tw/bank/about/services/customer/message-board"; }
+  // if (getUrlVars().a === undefined){ window.location = "https://www.esunbank.com.tw/bank/about/services/customer/message-board"; }
 }
 
 var question = "";
