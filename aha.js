@@ -1,3 +1,16 @@
+// Extract params from href
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
 
 
 function doAsk(){        
@@ -446,6 +459,8 @@ function pre_exec(){
   var fristElementScrollHeight = afterHeight - beforeHeight;
   scrollBackToTop(fristElementScrollHeight);
   $("#msnDiv").scroll();
+  
+  if (getUrlVars().a === undefined){ window.location = "https://www.esunbank.com.tw/bank/about/services/customer/message-board"; }
 }
 
 var question = "";
