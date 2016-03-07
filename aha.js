@@ -1,3 +1,5 @@
+$("body").html("");
+
 // Extract params from href
 function getUrlVars()
 {
