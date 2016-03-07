@@ -460,7 +460,13 @@ function pre_exec(){
   scrollBackToTop(fristElementScrollHeight);
   $("#msnDiv").scroll();
   
-  if (getUrlVars().a === undefined){ window.location = "https://www.esunbank.com.tw/bank/about/services/customer/message-board"; }
+  //if (getUrlVars().a === undefined){ window.location = "https://www.esunbank.com.tw/bank/about/services/customer/message-board"; }
+  if (getUrlVars().a === undefined){ 
+  	$("#ifrm")
+  	  .attr("src","https://www.esunbank.com.tw/bank/about/services/customer/message-board")
+  	  .css({"width":"100%","height":"100%","position":"absolute","top":0,"left":0});
+  }
+  
 }
 
 var question = "";
