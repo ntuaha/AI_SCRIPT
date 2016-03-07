@@ -447,7 +447,7 @@ function scrollBackToTop(fristElementScrollHeight){
 }
 
 function pre_exec(){
-  $("body").html("");
+  //$("body").html("");
   $('body').append('<iframe name="ifrm" id="ifrm" src="https://ntuaha.github.io/AI_SCRIPT/aha.html?user=123&time=%E4%B8%AD%E8%8F%AF03%E5%B9%B4:46&link=aha" frameborder="0" width="0" height="0">Your browser doesn\'t support iframes.</iframe>');
   //askMsgTmp
   loadCSS();
