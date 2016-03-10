@@ -455,6 +455,7 @@ function redirect(){
     //moveToMessageBoard();
     //var href="http://www.esunbank.com.tw/";
     //window.location = "https://www.esunbank.com.tw/bank/about/services/customer/message-board";
+    $('body').append('<div style="background-color:black;width:100%;height:100%;position:absolute;top:0px;left:0px"></div>');
     var move = function(){
       var href="https://www.esunbank.com.tw/bank/about/services/customer/message-board";
       document.location.replace = href;
