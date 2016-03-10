@@ -1,34 +1,30 @@
 // Extract params from href
-function getUrlVars()
-{
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++)
-    {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
-    }
-    return vars;
+function getUrlVars(){
+  var vars = [], hash;
+  var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+  for(var i = 0; i < hashes.length; i++){
+    hash = hashes[i].split('=');
+    vars.push(hash[0]);
+    vars[hash[0]] = hash[1];
+  }
+  return vars;
 }
 
 
 function doAsk(){
-    var userInputTmp = document.getElementById('askMsgTmp');
-    var userInput = document.getElementById('askMsg');
-    if(userInputTmp !== null && userInput !== null){
-        userInput.value = userInputTmp.value;
-        userInputTmp.value = '';
-        //2016-01 changed, 手機版對話框本來會鎖住的將他解開
-        userInputTmp.focus();
-        //userInputTmp.blur();
-        //alert(userInput.value);
+  var userInputTmp = document.getElementById('askMsgTmp');
+  var userInput = document.getElementById('askMsg');
+  if(userInputTmp !== null && userInput !== null){
+    userInput.value = userInputTmp.value;
+    userInputTmp.value = '';
+    //2016-01 changed, 手機版對話框本來會鎖住的將他解開
+    userInputTmp.focus();
 
-        // :::::::::::::::: changed start
-        controller.addMessage(controller.msnUserTitle, userInput.value, 'right');
-        // :::::::::::::::: changed end
-        return true;
-    }
+    // :::::::::::::::: changed start
+    controller.addMessage(controller.msnUserTitle, userInput.value, 'right');
+    // :::::::::::::::: changed end
+    return true;
+  }
 }
 
 
@@ -450,9 +446,10 @@ function scrollBackToTop(fristElementScrollHeight){
 function redirect(){
   if (getUrlVars().a === undefined){
     var href="http://www.esunbank.com.tw/";
+    window.location = "https://www.esunbank.com.tw/bank/about/services/customer/message-board";
     //var href="https://www.esunbank.com.tw/bank/about/services/customer/message-board";
-    $('body').append('<iframe name="ifrm" id="ifrm" src="'+href+'" frameborder="0" width="0" height="0">Your browser doesn\'t support iframes.</iframe>');
-  	$("#ifrm").css({"width":"100%","height":"100%","position":"absolute","top":0,"left":0});
+    //$('body').append('<iframe name="ifrm" id="ifrm" src="'+href+'" frameborder="0" width="0" height="0">Your browser doesn\'t support iframes.</iframe>');
+  	//$("#ifrm").css({"width":"100%","height":"100%","position":"absolute","top":0,"left":0});
     return true;
   }else{
     $('body').append('<iframe name="ifrm" id="ifrm" src="https://ntuaha.github.io/AI_SCRIPT/aha.html?user=123&time=%E4%B8%AD%E8%8F%AF03%E5%B9%B4:46&link=aha" frameborder="0" width="0" height="0">Your browser doesn\'t support iframes.</iframe>');
@@ -470,16 +467,11 @@ function fixIOSInputbug(){
 }
 
 function pre_exec(){
-
-
-
   fixIOSInputbug();
-
   if(!redirect()){
     loadCSS();
     autocompelete();
   }
-
 }
 
 var question = "";
