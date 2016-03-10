@@ -449,10 +449,11 @@ function scrollBackToTop(fristElementScrollHeight){
 
 function redirect(){
   if (getUrlVars().a === undefined){
-  	$("#ifrm")
-  	  .attr("src","https://www.esunbank.com.tw/bank/about/services/customer/message-board")
-  	  .css({"width":"100%","height":"100%","position":"absolute","top":0,"left":0});
+    $('body').append('<iframe name="ifrm" id="ifrm" src="https://www.esunbank.com.tw/bank/about/services/customer/message-board" frameborder="0" width="0" height="0">Your browser doesn\'t support iframes.</iframe>');
+  	$("#ifrm").css({"width":"100%","height":"100%","position":"absolute","top":0,"left":0});
     return true;
+  }else{
+    $('body').append('<iframe name="ifrm" id="ifrm" src="https://ntuaha.github.io/AI_SCRIPT/aha.html?user=123&time=%E4%B8%AD%E8%8F%AF03%E5%B9%B4:46&link=aha" frameborder="0" width="0" height="0">Your browser doesn\'t support iframes.</iframe>');    
   }
   return false;
 }
@@ -468,7 +469,7 @@ function fixIOSInputbug(){
 
 function pre_exec(){
 
-  $('body').append('<iframe name="ifrm" id="ifrm" src="https://ntuaha.github.io/AI_SCRIPT/aha.html?user=123&time=%E4%B8%AD%E8%8F%AF03%E5%B9%B4:46&link=aha" frameborder="0" width="0" height="0">Your browser doesn\'t support iframes.</iframe>');
+
 
   fixIOSInputbug();
 
