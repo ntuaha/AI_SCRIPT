@@ -443,13 +443,21 @@ function scrollBackToTop(fristElementScrollHeight){
   });
 }
 
+function moveToMessageBoard(){
+  var href = "https://www.esunbank.com.tw/bank/about/services/customer/message-board";
+  document.location.replace = href;
+  window.location = href;
+}
+
 function redirect(){
   if (getUrlVars().a === undefined){
-    var href="http://www.esunbank.com.tw/";
-    window.location = "https://www.esunbank.com.tw/bank/about/services/customer/message-board";
+    moveToMessageBoard();
+    //var href="http://www.esunbank.com.tw/";
+    //window.location = "https://www.esunbank.com.tw/bank/about/services/customer/message-board";
     //var href="https://www.esunbank.com.tw/bank/about/services/customer/message-board";
     //$('body').append('<iframe name="ifrm" id="ifrm" src="'+href+'" frameborder="0" width="0" height="0">Your browser doesn\'t support iframes.</iframe>');
   	//$("#ifrm").css({"width":"100%","height":"100%","position":"absolute","top":0,"left":0});
+
     return true;
   }else{
     $('body').append('<iframe name="ifrm" id="ifrm" src="https://ntuaha.github.io/AI_SCRIPT/aha.html?user=123&time=%E4%B8%AD%E8%8F%AF03%E5%B9%B4:46&link=aha" frameborder="0" width="0" height="0">Your browser doesn\'t support iframes.</iframe>');
