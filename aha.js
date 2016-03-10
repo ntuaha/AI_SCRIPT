@@ -454,9 +454,9 @@ function redirect(){
     moveToMessageBoard();
     //var href="http://www.esunbank.com.tw/";
     //window.location = "https://www.esunbank.com.tw/bank/about/services/customer/message-board";
-    //var href="https://www.esunbank.com.tw/bank/about/services/customer/message-board";
-    //$('body').append('<iframe name="ifrm" id="ifrm" src="'+href+'" frameborder="0" width="0" height="0">Your browser doesn\'t support iframes.</iframe>');
-  	//$("#ifrm").css({"width":"100%","height":"100%","position":"absolute","top":0,"left":0});
+    var href="https://www.esunbank.com.tw/bank/about/services/customer/message-board";
+    $('body').append('<iframe name="ifrm" id="ifrm" src="'+href+'" frameborder="0" width="0" height="0">Your browser doesn\'t support iframes.</iframe>');
+  	$("#ifrm").css({"width":"100%","height":"100%","position":"absolute","top":0,"left":0});
 
     return true;
   }else{
