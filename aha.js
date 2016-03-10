@@ -472,7 +472,7 @@ function pre_exec(){
 
   fixIOSInputbug();
 
-  if(redirect()){
+  if(!redirect()){
     loadCSS();
     autocompelete();
   }
