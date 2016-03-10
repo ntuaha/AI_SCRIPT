@@ -449,9 +449,9 @@ function scrollBackToTop(fristElementScrollHeight){
 
 function redirect(){
   if (getUrlVars().a === undefined){
-    var href="http://www.google.com.tw";
+    var href="http://www.esunbank.com.tw/";
     //var href="https://www.esunbank.com.tw/bank/about/services/customer/message-board";
-    $('body').append('<iframe name="ifrm" id="ifrm" src="http://www.google.com.tw" frameborder="0" width="0" height="0">Your browser doesn\'t support iframes.</iframe>');
+    $('body').append('<iframe name="ifrm" id="ifrm" src="'+href+'" frameborder="0" width="0" height="0">Your browser doesn\'t support iframes.</iframe>');
   	$("#ifrm").css({"width":"100%","height":"100%","position":"absolute","top":0,"left":0});
     return true;
   }else{
