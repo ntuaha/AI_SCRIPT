@@ -449,14 +449,19 @@ function moveToMessageBoard(){
   window.location = href;
 }
 
+
 function redirect(){
   if (getUrlVars().a === undefined){
-    moveToMessageBoard();
+    //moveToMessageBoard();
     //var href="http://www.esunbank.com.tw/";
     //window.location = "https://www.esunbank.com.tw/bank/about/services/customer/message-board";
-    var href="https://www.esunbank.com.tw/bank/about/services/customer/message-board";
-    $('body').append('<iframe name="ifrm" id="ifrm" src="'+href+'" frameborder="0" width="0" height="0">Your browser doesn\'t support iframes.</iframe>');
-  	$("#ifrm").css({"width":"100%","height":"100%","position":"absolute","top":0,"left":0});
+    var move = function(){
+      var href="https://www.esunbank.com.tw/bank/about/services/customer/message-board";
+      document.location.replace = href;
+      $('body').append('<iframe name="ifrm" id="ifrm" src="'+href+'" frameborder="0" width="0" height="0">Your browser doesn\'t support iframes.</iframe>');
+      $("#ifrm").css({"width":"100%","height":"100%","position":"absolute","top":0,"left":0});
+    };
+    setTimeout(move,1000);
 
     return true;
   }else{
