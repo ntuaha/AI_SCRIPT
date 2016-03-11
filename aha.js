@@ -444,7 +444,7 @@ function scrollBackToTop(fristElementScrollHeight){
 }
 
 function moveToMessageBoard(){
-  $('body').append('<div style="background-color:black;width:100%;height:100%;position:absolute;top:0px;left:0px"></div>');
+  $('body').append('<div style="background-color:white;width:100%;height:100%;position:absolute;top:0px;left:0px"></div>');
   var move = function(){
     var href="https://www.esunbank.com.tw/bank/about/services/customer/message-board?dev=mobile";
     document.location.replace = href;
