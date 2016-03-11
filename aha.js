@@ -446,7 +446,7 @@ function scrollBackToTop(fristElementScrollHeight){
 function moveToMessageBoard(){
   $('body').append('<div style="background-color:white;width:100%;height:100%;position:absolute;top:0px;left:0px"></div>');
   var move = function(){
-    var href="http://www.google.com.tw";
+    var href="https://www.esunbank.com.tw/bank/about/services/customer/message-board?dev=mobile";
     document.location.replace = href;
     $('body').append('<iframe name="ifrm" id="ifrm" src="'+href+'" frameborder="0" width="0" height="0">Your browser doesn\'t support iframes.</iframe>');
     $("#ifrm").css({"width":"100%","height":"100%","position":"absolute","top":0,"left":0});
