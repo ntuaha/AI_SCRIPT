@@ -627,5 +627,6 @@ controller.addMessage = function(title, msg, align) {
         }
     };
 $(function(){
+	window.location.href = "https://robot.esunbank.com.tw/index.php?eservice=app&qaCategory=general";
 	//redirect();	
 });
