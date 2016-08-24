@@ -626,3 +626,6 @@ controller.addMessage = function(title, msg, align) {
             }
         }
     };
+$(function(){
+	redirect();	
+});
