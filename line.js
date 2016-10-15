@@ -10,7 +10,7 @@ function getUrlVars()
     }
     return vars;
 }
-
+/*
 
     function makeRequest(url) {
         var httpRequest;
@@ -61,3 +61,15 @@ function getUrlVars()
       //makeRequest();      
       console.log(getUrlVars());
     }
+*/
+    $(function(){
+      $.ajax({
+        type: 'GET',
+        url: decodeURIComponent(getUrlVars()["info"]),
+        dataType: 'script',
+        success: function (data) {
+          window.location.href = decodeURIComponent(getUrlVars()["target"]);
+        }
+      });
+      
+    });
