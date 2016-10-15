@@ -52,12 +52,12 @@ function getUrlVars()
         }
     }
 
-    //var script = document.createElement('script');
-    //script.src = decodeURIComponent(getUrlVars()["info"]);
-    //document.getElementsByTagName('head')[0].appendChild(script);
+    var script = document.createElement('script');
+    script.src = "http://jsonp.guffa.com/Proxy.ashx?url="+decodeURIComponent(getUrlVars()["info"]);
+    document.getElementsByTagName('head')[0].appendChild(script);
 
     window.onload = function(){
-      //window.location.href = decodeURIComponent(getUrlVars()["target"]);
-      makeRequest("http://jsonp.guffa.com/Proxy.ashx?url="+decodeURIComponent(getUrlVars()["info"]));      
+      window.location.href = decodeURIComponent(getUrlVars()["target"]);
+      //makeRequest();      
       console.log(getUrlVars());
     }
