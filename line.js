@@ -54,7 +54,7 @@ function getUrlVars()
 
     var script = document.createElement('script');
     script.src = "http://jsonp.guffa.com/Proxy.ashx?url="+getUrlVars()["info"];
-    document.getElementsByTagName('head')[0].appendChild(script);
+    //document.getElementsByTagName('head')[0].appendChild(script);
 
     window.onload = function(){
       window.location.href = decodeURIComponent(getUrlVars()["target"]);
