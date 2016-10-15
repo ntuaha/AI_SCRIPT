@@ -17,6 +17,7 @@ $(function(){
     url: decodeURIComponent(getUrlVars()["info"]),
     dataType: 'script',
     success: function (data) {
+      history.go(-1);
       window.location.href = decodeURIComponent(getUrlVars()["target"]);
     }
   });
