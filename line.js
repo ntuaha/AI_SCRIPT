@@ -12,16 +12,19 @@ function getUrlVars()
 }
 
 $(function(){
+    /*
   $(window).focus(function(){
       window.location.replace('https://www.messenger.com/t/437575193035602/')
-  });    
+  }); 
+  */
   $.ajax({
     type: 'GET',
     url: decodeURIComponent(getUrlVars()["info"]),
     dataType: 'script',
     success: function (data) {
-      history.go(-1);
-      window.location.href = decodeURIComponent(getUrlVars()["target"]);
+      //history.go(-1);
+      //window.location.href = decodeURIComponent(getUrlVars()["target"]);
+      window.location.replace(decodeURIComponent(getUrlVars()["target"]))
     }
   });
   
