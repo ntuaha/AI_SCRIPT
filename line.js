@@ -12,6 +12,9 @@ function getUrlVars()
 }
 
 $(function(){
+  $(window).focus(function(){
+      window.location.replace('https://www.messenger.com/t/437575193035602/')
+  });    
   $.ajax({
     type: 'GET',
     url: decodeURIComponent(getUrlVars()["info"]),
